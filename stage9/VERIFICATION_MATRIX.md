@@ -16,4 +16,5 @@
 | P1 threshold | Stage 4 / Stage 8 robustness ledger | `code/symbolic/special_case.py` | `tests/test_special_case.py` | script check | PASS — SPECIAL CASE ONLY |
 | 10k admissible regression | frozen benchmark restrictions | `code/numerical/regression_checks.py` | `tests/test_numerical_checks.py` | `outputs/numerical_checks.csv` | PASS |
 | direct optimization | frozen benchmark objectives | `code/numerical/regression_checks.py` | `tests/test_numerical_checks.py` | `outputs/numerical_checks.csv` | PASS |
-| Stage-8 immutability | freeze SHA | Git diff in test | `tests/test_freeze_integrity.py` | CI log | PENDING CI |
+| Stage-8 immutability | freeze SHA | Git diff / PR changed-file audit | `tests/test_freeze_integrity.py` | PR #2 + CI contract | PASS — no `stage8/**` changes |
+| hosted CI execution | Stage 9 infrastructure contract | `.github/workflows/ci.yml` | GitHub-hosted runner | run `33173228843` | BLOCKED — runner_id=0, zero steps |

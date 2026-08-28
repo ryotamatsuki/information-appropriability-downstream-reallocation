@@ -8,11 +8,11 @@
 - latexmk: 4.86
 - GNU Make: available
 
-## Pre-PR local validation
+## Local validation
 
-`make verify`: PASS, with the freeze-integrity test skipped only because the isolated working directory is not a Git checkout. The same test is mandatory and non-skipped in GitHub Actions.
+`make verify`: PASS, with the freeze-integrity test skipped only because the isolated working directory is not a Git checkout.
 
-Pytest result after final symbolic identities: **18 passed, 1 skipped locally** (the one skip is freeze-integrity checkout-only).
+Final pytest result: **18 passed, 1 skipped locally**. The sole skip is the Git-history freeze-integrity test.
 
 Deterministic numerical regression:
 - 10,000 admissible draws
@@ -21,15 +21,32 @@ Deterministic numerical regression:
 - zero effort-ordering failures
 - zero widening-wedge failures
 - 100 direct-optimization cross-checks
-- maximum absolute direct-vs-closed-form error: approximately `1.188e-06`
+- max direct-vs-closed-form error ≈ `1.188e-06` < `2e-06`
 - 5/5 boundary smoke tests passed
 
 `make outputs`: PASS.
 
-`make manuscript`: PASS; generated one-page scaffold PDF in `manuscript/build/`.
+Two consecutive output regenerations produced identical file hashes: PASS.
+
+`make manuscript`: PASS; one-page Stage-9 scaffold PDF generated locally.
 
 `make all`: PASS in the isolated clean-output rebuild.
 
-## CI
+## Freeze integrity
 
-Pending PR creation and clean GitHub-hosted checkout validation.
+PR #2 changed-file audit: PASS. No path under `stage8/**` is changed.
+
+## GitHub Actions
+
+Initial run: `33173228843`.
+
+Jobs:
+- verification — failure before runner assignment
+- manuscript-build — failure before runner assignment
+
+For both jobs GitHub reports:
+- `runner_id: 0`
+- empty `runner_name`
+- `steps: []`
+
+No workflow step ran, and no job log was generated. This is classified as an infrastructure / runner-allocation blocker, not a repository-code or theory-verification failure.

@@ -10,10 +10,15 @@
 - Direct-optimization cross-check cases: `100`
 - Symbolic scripts: `code/symbolic/general_model.py`, `welfare_model.py`, `special_case.py`
 - Numerical scripts: `code/numerical/parameter_checks.py`, `regression_checks.py`
+- Local tests: `18 passed, 1 checkout-only skip`
 - CI workflow: `.github/workflows/ci.yml`
 - Build commands: `make verify`, `make outputs`, `make manuscript`, `make all`, `make clean`
 - Output files: `symbolic_results.txt`, `welfare_results.txt`, `numerical_checks.csv`, `output_manifest.json`
-- Manuscript build status: `LOCAL PASS / CI PENDING`
-- CI run ID: `PENDING`
-- Stage 9 implementation commit SHA: `PENDING`
-- Stage 9 PR: `PENDING`
+- Deterministic-output repeat check: `PASS`
+- Manuscript build status: `PASS locally`
+- Initial CI run ID: `33173228843`
+- CI status: `NOT FEASIBLE — both jobs failed before runner assignment; runner_id=0; zero steps`
+- Stage 9 implementation commit SHA: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
+- Stage 9 PR: `#2`
+- Stage 9 verdict: `CONDITIONAL GO`
+- One blocker: `GitHub Actions runner allocation unavailable before job execution`
