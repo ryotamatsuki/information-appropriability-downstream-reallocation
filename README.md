@@ -1,14 +1,22 @@
 # Information Appropriability under Downstream Reallocation
 
-Theory-research project studying how downstream reallocation changes incentives to produce noncontractible information that improves an upstream product across downstream routes.
+Theory-research project on how downstream reallocation changes incentives to produce noncontractible information that improves an upstream product across downstream routes.
 
-## Current status
+## Workflow status
 
-Research-paper-workflow v1.0: **Stage 8 — Canonical Theory Freeze in progress**.
+**Stage 8 verdict: GO — THEORY FREEZE READY FOR MERGE.**
 
-The current contribution candidate is a reallocation-induced divergence: the information-producing downstream node's private effort can fall while coordinated/socially desired information effort rises because reusable information becomes more valuable through an expanding alternative route.
+The Stage 8 pull request is the review gate. The theory becomes **THEORY FROZEN** only when that PR is merged into `main`. Stage 9 production/reproducibility setup must not begin before the merge.
 
-This repository is intentionally minimal until the Stage 8 theory-freeze decision is merged. Manuscript, LaTeX, CI, production verification code, and journal-positioning files belong to later workflow stages.
+## Canonical contribution candidate
+
+Downstream reallocation can reduce an information producer's private effort while increasing coordinated/socially desired information effort when the information is reusable through an expanding route with sufficiently high marginal system value.
+
+The project does **not** claim that downstream feedback, user innovation, information externalities, retailer information, or endogenous channel structure are themselves new.
+
+## Repository scope at Stage 8
+
+This repository currently contains only canonical theory-freeze and research-governance records. Manuscript files, LaTeX, CI, production verification code, figures, tables, and journal-positioning files belong to Stage 9 or later.
 
 ## Provenance
 
