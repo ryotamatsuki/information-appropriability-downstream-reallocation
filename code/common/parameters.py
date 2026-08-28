@@ -1,0 +1,6 @@
+"""Shared deterministic numerical-check constants."""
+SEED = 20260828
+NUMERICAL_DRAWS = 10_000
+DIRECT_OPT_CASES = 100
+OPT_TOL = 2e-6
+FREEZE_SHA = "ef588465430f618b56cf84445681752702c161e1"

@@ -1,0 +1,12 @@
+# GENERATED — DO NOT EDIT MANUALLY
+check,value,status
+boundary_cases_passed,5,PASS
+boundary_cases_total,5,INFO
+demand_failures,0,PASS
+direct_optimization_cases,100,INFO
+direct_optimization_max_abs_error,1.18792918258e-06,PASS
+draws,10000,INFO
+effort_positivity_failures,0,PASS
+ordering_failures,0,PASS
+seed,20260828,INFO
+widening_wedge_failures,0,PASS

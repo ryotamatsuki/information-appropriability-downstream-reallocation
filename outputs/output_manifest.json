@@ -1,0 +1,20 @@
+{
+  "files": {
+    "numerical_checks.csv": {
+      "generator": "code/generate_outputs.py",
+      "sha256": "1c5e6e198b82989d69d7ba92f02106b47dd5a00bb52710331772e34cf9d4ceef"
+    },
+    "symbolic_results.txt": {
+      "generator": "code/generate_outputs.py",
+      "sha256": "0a3324ba7a180e95c2baa07fbc27b368179b5d7565b23187daed148ebd92515b"
+    },
+    "welfare_results.txt": {
+      "generator": "code/generate_outputs.py",
+      "sha256": "f6e10190e189dddd6f93bbf4bd0eff1c3ee41882d90ef6dab4daa1007ca04a1d"
+    }
+  },
+  "notice": "GENERATED — DO NOT EDIT MANUALLY",
+  "python_version": "3.13.5",
+  "seed": 20260828,
+  "sympy_version": "1.14.0"
+}

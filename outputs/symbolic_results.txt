@@ -1,0 +1,18 @@
+GENERATED — DO NOT EDIT MANUALLY
+Stage 9 symbolic verification: frozen Stage 8 general model
+
+private FOC: m_S*omega_S(eta)*Derivative(D_S(g(e)), g(e))*Derivative(g(e), e) - Derivative(C(e), e)
+private IFT derivative: m_S*Derivative(D_S(g(e)), g(e))*Derivative(g(e), e)*Derivative(omega_S(eta), eta)/(-m_S*omega_S(eta)*Derivative(D_S(g(e)), g(e))*Derivative(g(e), (e, 2)) - m_S*omega_S(eta)*Derivative(D_S(g(e)), (g(e), 2))*Derivative(g(e), e)**2 + Derivative(C(e), (e, 2)))
+private sign condition: omega_S'(eta) < 0 and private SOC < 0 => de^P/deta < 0
+
+coordinated FOC: A_R*omega_R(eta)*Derivative(D_R(g(e)), g(e))*Derivative(g(e), e) + A_S*omega_S(eta)*Derivative(D_S(g(e)), g(e))*Derivative(g(e), e) - Derivative(C(e), e)
+coordinated IFT derivative: -(A_R*Derivative(D_R(g(e)), g(e))*Derivative(omega_R(eta), eta) + A_S*Derivative(D_S(g(e)), g(e))*Derivative(omega_S(eta), eta))*Derivative(g(e), e)/(A_R*omega_R(eta)*Derivative(D_R(g(e)), g(e))*Derivative(g(e), (e, 2)) + A_R*omega_R(eta)*Derivative(D_R(g(e)), (g(e), 2))*Derivative(g(e), e)**2 + A_S*omega_S(eta)*Derivative(D_S(g(e)), g(e))*Derivative(g(e), (e, 2)) + A_S*omega_S(eta)*Derivative(D_S(g(e)), (g(e), 2))*Derivative(g(e), e)**2 - Derivative(C(e), (e, 2)))
+condition (G) bracket: A_R*D_R_prime*omega_R_prime + A_S*D_S_prime*omega_S_prime
+condition (G): A_R*omega_R'*D_R' > -A_S*omega_S'*D_S'
+
+cross-route-off bracket (D_R'=0): A_S*D_S_prime*omega_S_prime
+economic sign: negative under A_S>0, omega_S'<0, D_S'>0
+one-for-one bracket: D_prime*rho*(A_R - A_S)
+one-for-one sign condition: A_R > A_S
+
+STATUS: PASS — algebraic identities reproduce the frozen Stage 8 model.

@@ -1,0 +1,22 @@
+GENERATED — DO NOT EDIT MANUALLY
+Stage 9 symbolic verification: frozen Stage 8 welfare benchmark
+
+utility FOC: a + beta*e - p - q
+demand: a + beta*e - p
+private FOC: beta*m*(1 - h) - e*k
+coordinated FOC: beta*(h*(-c_R + p) + (1 - h)*(-c_S + p)) - e*k
+social FOC: beta*(h*(-c_R + p) + (1 - h)*(-c_S + p)) + beta*(a + beta*e - p) - e*k
+eP: beta*m*(1 - h)/k
+eC: beta*(-c_R*h + c_S*h - c_S + p)/k
+eW: beta*(a - c_R*h + c_S*h - c_S)/(-beta**2 + k)
+
+eC-eP: beta*(-c_R*h + c_S*h - c_S + h*m - m + p)/k
+eW-eC: -beta*(-a*k + beta**2*c_R*h - beta**2*c_S*h + beta**2*c_S - beta**2*p + k*p)/(k*(-beta**2 + k))
+eW-eC positive decomposition: -beta*(-a*k + beta**2*c_R*h - beta**2*c_S*h + beta**2*c_S - beta**2*p + k*p)/(k*(-beta**2 + k))
+d(eC-eP)/deta: beta*h_prime*(-c_R + c_S + m)/k
+d(eW-eP)/deta: beta*h_prime*(-beta**2*m - c_R*k + c_S*k + k*m)/(k*(-beta**2 + k))
+social objective second derivative: beta**2 - k
+
+sign restrictions: a>p>c_S>c_R>=0, 0<m<p-c_S, beta>0, k>beta^2, h'>0
+ordering under frozen restrictions: eP < eC < eW
+STATUS: PASS — frozen welfare formulas are re-derived from objectives.
