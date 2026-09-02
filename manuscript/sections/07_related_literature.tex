@@ -1,2 +1,31 @@
-\section{Related Literature}
-% Stage 10 placeholder only.
+\section{Related Literature}\label{sec:literature}
+
+The paper is related to several literatures that study information acquisition, user-generated innovation, vertical information sharing, and endogenous channel structure. The contribution does not lie in any one of these ingredients. It lies in the comparative-static interaction between downstream reallocation and the appropriability of a reusable information input.
+
+\subsection{Downstream information acquisition and vertical sharing}
+
+A first strand studies costly information acquisition in vertical relationships. \citet{Guo2009} analyzes downstream information acquisition in a strategic channel and distinguishes an efficiency effect from a strategic disclosure effect. \citet{GuoIyer2010} study a manufacturer's information acquisition and voluntary sharing decisions in a vertical relationship. These papers establish that the amount of information generated and disclosed can itself be endogenous and strategically important.
+
+Our question is different in two respects. First, the information producer in our model is the downstream node, and the information input raises upstream product value rather than merely refining a state estimate for pricing or quantity choice. Second, the comparative static is driven by an exogenous reallocation of downstream activity. The central object is whether the location that pays for information production loses appropriable return even as the system value of that information rises elsewhere. Neither information acquisition nor sharing is claimed to be novel here.
+
+Recent supply-chain work brings information acquisition and channel structure closer together. \citet{HuEtAl2021} allow a retailer to choose when to acquire consumer-preference information and whether to share it when a manufacturer can encroach and choose quality. \citet{HuangChenGuan2020} study retailer information sharing under an endogenous channel structure in which manufacturer investment spills over to the retailer. These models feature richer channel choices and strategic information regimes than ours. Our model deliberately removes those margins to isolate a different feedback: reallocation changes the private footprint of the information producer while the same information remains reusable through the expanding route.
+
+\subsection{User innovation and externalities}
+
+The mechanism also relates to the user-innovation literature. \citet{GambardellaRaaschVonHippel2017} formalize a market in which users themselves innovate and producers decide whether to support and harvest user innovations. Their welfare analysis shows how externalities can lead profit-maximizing firms to make organizational choices that differ from the social optimum. Our information-producing node can be viewed broadly as a source of user- or field-originated knowledge, but the economic object is narrower: we take the information-production technology as given and ask how reallocating downstream activity changes the gap between private and system incentives to generate that knowledge.
+
+The distinction matters for the theorem. Theorem~\ref{thm:divergence} does not require that the downstream node introduce a finished innovation. It requires costly information production, incomplete appropriability, and cross-route reuse through upstream product improvement. The relevant externality is therefore linked to where downstream activity is located, not simply to the existence of user-generated innovation.
+
+\subsection{Endogenous channel and network structure}
+
+A third strand studies how vertical contracts and information shape the structure of downstream networks. \citet{PagnozziPiccoloReisinger2021}, for example, analyze a manufacturer that chooses the number of retailers when retailers possess correlated private information. They show that information rents can affect the privately optimal distribution-network size relative to the social optimum. Our supporting organizational result is conceptually adjacent because private organization can under-retain an information-producing capacity near a retention threshold. But channel structure is not the driver of our main theorem: the core comparative static is defined for an exogenous reallocation index $\eta$, and the retention result is explicitly local and secondary.
+
+\subsection{Proposition-level distinction}
+
+Taken together, the closest literatures establish several components that we use: downstream actors can acquire valuable information; information can be shared vertically; user-generated knowledge can create externalities; investment effects can spill across channel arrangements; and information rents can affect vertical organization. The paper does not claim priority over any of these components.
+
+The proposition-level distinction is instead the following. In our model, downstream reallocation shrinks the information producer's appropriable own-route return while increasing the system weight placed on a route that can reuse the same product-improvement information. Under condition~\eqref{eq:G}, this produces the sign divergence
+\[
+    \frac{d\Eprivate}{d\eta}<0<\frac{d\Ecoordinated}{d\eta}.
+\]
+Corollary~\ref{cor:reuse} further shows that the positive coordinated response disappears when cross-route reuse is shut down. This reallocation-induced divergence is the contribution boundary carried forward from the prior-art audit; broader claims about information externalities, user innovation, retailer information, or channel structure are neither necessary nor made.
