@@ -1,2 +1,29 @@
-\section{Robustness}
-% Stage 10 placeholder only.
+\section{Robustness and Scope}\label{sec:robustness}
+
+The sign divergence in Theorem~\ref{thm:divergence} is not a consequence of the linear--quadratic welfare benchmark. The general formulation in Sections~\ref{sec:model}--\ref{sec:mainresults} already allows nonlinear route activity, nonlinear learning, and nonquadratic effort costs. What matters is the sign structure of the comparative statics, not the particular closed forms used in Section~\ref{sec:welfare}.
+
+\subsection{Nonlinear route reallocation}
+
+The route weights $\omega_S(\eta)$ and $\omega_R(\eta)$ need not be linear or sum to a constant. The private derivative in \eqref{eq:privateift} remains negative whenever the information producer's appropriable footprint is locally shrinking, $\omega_S'(\eta)<0$, and the private problem remains locally concave. For the coordinated problem, nonlinear route reallocation changes the magnitude of the two terms in condition~\eqref{eq:G} but not its economic content. The positive coordinated response requires the expanding route's weighted marginal return to dominate the loss on the shrinking route.
+
+This observation also clarifies what the theorem does not require. It does not require a one-for-one transfer of activity between routes. Corollary~\ref{cor:oneforone} imposes one-for-one reallocation only to obtain the transparent reduction $A_R>A_S$.
+
+\subsection{Nonlinear information production}
+
+The learning technology $x=g(e)$ may be nonlinear. Equations \eqref{eq:privateift} and \eqref{eq:coordinatedift} retain $g'(e)$ explicitly, while curvature in $g$ enters the second-order conditions. Hence diminishing or increasing marginal information productivity is compatible with the result as long as $g'(e)>0$ in the relevant region and the effort problems have unique interior concave optima.
+
+Similarly, the effort cost $C(e)$ need not be quadratic. Nonquadratic cost changes the equilibrium level of effort and the IFT denominator but does not change the sign logic when $C$ is sufficiently convex to maintain the required second-order conditions. The quadratic form in Section~\ref{sec:welfare} is used only to display the private, coordinated, and social effort levels in closed form.
+
+\subsection{Demand curvature}
+
+Route-specific responses $D_S(x)$ and $D_R(x)$ may also be nonlinear. Their first derivatives determine the marginal value of information in condition~\eqref{eq:G}, while their second derivatives affect local concavity. The theorem therefore permits heterogeneous information productivity across routes. Indeed, heterogeneity in $D_R'$ is economically meaningful: greater reuse value on the expanding route makes condition~\eqref{eq:G} easier to satisfy.
+
+\subsection{A utility-based benchmark}
+
+Section~\ref{sec:welfare} provides a separate utility microfoundation with quasilinear preferences, linear benchmark learning, and quadratic effort cost. Its role is to discipline welfare accounting and to distinguish private, coordinated, and social objectives. The ordering $\Eprivate<\Ecoordinated<\Esocial$ and the widening wedges are benchmark results under the stated parameter restrictions; they should not be read as unconditional implications of every member of the general model class.
+
+\subsection{Boundary of robustness}
+
+The theorem is therefore best described as \emph{robust under conditions}. Two conditions cannot be dispensed with. First, the private sign requires a shrinking appropriable footprint and the relevant concavity condition. Second, the positive coordinated sign requires condition~\eqref{eq:G}. Corollary~\ref{cor:reuse} shows that when information has no cross-route use, the coordinated sign reverses and the headline divergence disappears.
+
+The robustness analysis does not introduce bargaining, strategic pricing, endogenous consumer sorting, dynamics, additional firms, or a separate information-revelation game. Such modifications could generate other economic forces, but they are outside the frozen theory and are not needed for the mechanism established here.
