@@ -1,11 +1,16 @@
 \documentclass[11pt]{article}
 \input{preamble}
-\title{Research Manuscript Scaffold}
+\title{Information Appropriability under Downstream Reallocation}
 \author{}
 \date{}
 \begin{document}
 \maketitle
-% Stage 9 only: section headings and placeholders. No manuscript prose.
+
+\begin{abstract}
+We study how downstream reallocation affects incentives to produce information when the information is generated at one downstream node but improves an upstream product used across routes. The information-producing node internalizes only the return tied to its own downstream footprint, whereas a coordinated system internalizes the value of reusable information through both the shrinking and expanding routes. In a general model, private information effort falls as activity reallocates away from the information producer. Coordinated effort instead rises when the expanding route's weighted marginal return to product-improvement information exceeds the return lost on the shrinking route. This yields a reallocation-induced divergence in private and coordinated information incentives. Cross-route reuse is necessary for the positive coordinated response in the separable model. A quasilinear welfare benchmark further delivers $e^{P}<e^{C}<e^{W}$ and shows that the private--coordinated and private--social effort gaps widen with downstream reallocation under the stated restrictions. The mechanism identifies an information-appropriability problem created by the changing location of downstream activity rather than by information externalities or channel structure per se.
+\end{abstract}
+
+\input{sections/08_introduction}
 \input{sections/01_model}
 \input{sections/02_equilibrium}
 \input{sections/03_main_results}
@@ -13,8 +18,9 @@
 \input{sections/05_robustness}
 \input{sections/06_institutional_bridge}
 \input{sections/07_related_literature}
-\input{sections/08_introduction}
 \input{sections/09_discussion}
 \input{sections/10_conclusion}
-% Bibliography activation awaits verified import from the Stage 6 literature ledger.
+
+\bibliographystyle{plainnat}
+\bibliography{../references/references}
 \end{document}
