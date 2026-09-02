@@ -2,7 +2,7 @@
 
 - Canonical freeze SHA: `ef588465430f618b56cf84445681752702c161e1`
 - Stage 9 branch: `stage9/reproducibility-setup`
-- Final Stage 9 branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`
+- Final Stage 9 branch HEAD: `8c39cc32866eb8212bf804253a2ab0ff74012af3`
 - Python: `3.13.5`
 - SymPy: `1.14.0`
 - pytest: `9.0.2`
@@ -14,9 +14,9 @@
 - Local tests: `18 passed, 1 checkout-only skip`
 - Hosted tests: `19 passed, 0 skipped`
 - CI workflow: `.github/workflows/ci.yml`
-- Final hosted workflow run: `33634955842`
-- Hosted `verification`: **PASS**; job `100263388675`; runner `1000007154`; `ubuntu-latest`
-- Hosted `manuscript-build`: **PASS**; job `100263388233`; runner `1000007153`; `ubuntu-latest`
+- Final hosted workflow run: `33635911794`
+- Hosted `verification`: **PASS**; job `100266613809`; runner `1000007174`; `ubuntu-latest`
+- Hosted `manuscript-build`: **PASS**; job `100266614130`; runner `1000007175`; `ubuntu-latest`
 - Build commands: `make verify`, `make outputs`, `make manuscript`, `make all`, `make clean`
 - Output files: `symbolic_results.txt`, `welfare_results.txt`, `numerical_checks.csv`, `output_manifest.json`
 - Numerical regression: **PASS** — 10,000 draws; zero recorded failures

@@ -4,11 +4,11 @@
 
 **GO — READY FOR MERGE**
 
-The GitHub-hosted runner-allocation failure has been resolved by rerunning the existing workflow. Final hosted run `33634955842` executed both jobs on `ubuntu-latest` and completed successfully. A single Stage 9 implementation defect was found after runner allocation in the generated manifest's Unicode serialization and fixed in commit `314ce17690c0264db5607212b97b2cd099e1b8b7`; no theory change was made.
+The GitHub-hosted runner-allocation failure has been resolved by rerunning the existing workflow. Final hosted run `33635911794` executed both jobs on `ubuntu-latest` and completed successfully. A single Stage 9 implementation defect was found after runner allocation in the generated manifest's Unicode serialization and fixed in commit `314ce17690c0264db5607212b97b2cd099e1b8b7`; no theory change was made.
 
 ## 2. Repository Status
 
-Production reproducibility architecture is implemented on `stage9/reproducibility-setup` and exposed in PR #2. Final branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`. The PR remains intentionally open and is **READY FOR MERGE** pending the project's merge authorization.
+Production reproducibility architecture is implemented on `stage9/reproducibility-setup` and exposed in PR #2. Final branch HEAD: `8c39cc32866eb8212bf804253a2ab0ff74012af3`. The PR remains intentionally open and is **READY FOR MERGE** pending the project's merge authorization.
 
 ## 3. Theory Freeze Verification
 
@@ -108,7 +108,7 @@ Hosted final suite: **19 passed, 0 skipped**. The hosted full-history checkout e
 
 **PASS**
 
-Two successive local regenerations produced identical SHA256 hashes for all committed files in `outputs/`. In hosted run `33634955842`, `make outputs` completed and `git diff --exit-code -- outputs/` passed after the manifest serialization repair.
+Two successive local regenerations produced identical SHA256 hashes for all committed files in `outputs/`. In hosted run `33635911794`, `make outputs` completed and `git diff --exit-code -- outputs/` passed after the manifest serialization repair.
 
 ## 15. LaTeX Scaffold
 
@@ -146,14 +146,14 @@ The workflow uses official `actions/checkout@v7` and `actions/setup-python@v7`.
 
 **PASS — HOSTED CI VERIFIED**
 
-Final hosted workflow run: `33634955842`  
-Head SHA: `314ce17690c0264db5607212b97b2cd099e1b8b7`  
+Final hosted workflow run: `33635911794`  
+Head SHA: `8c39cc32866eb8212bf804253a2ab0ff74012af3`  
 Conclusion: **success**
 
 Jobs:
 
-- `verification`: job `100263388675`, runner `1000007154`, label `ubuntu-latest` — **success**
-- `manuscript-build`: job `100263388233`, runner `1000007153`, label `ubuntu-latest` — **success**
+- `verification`: job `100266613809`, runner `1000007174`, label `ubuntu-latest` — **success**
+- `manuscript-build`: job `100266614130`, runner `1000007175`, label `ubuntu-latest` — **success**
 
 The `verification` job executed checkout, Python 3.13.5 setup, pinned dependency installation, symbolic and welfare checks, pytest (**19 passed**), 10,000-draw numerical regression, deterministic output regeneration, and committed-output diff validation. The `manuscript-build` job executed LaTeX tooling installation and compiled the one-page scaffold successfully.
 
@@ -171,7 +171,7 @@ The runner-allocation failure is classified as a transient GitHub-hosted Actions
 
 **COMPLETE — all local and hosted CI gates pass.**
 
-The matrix below records the analytical, numerical, deterministic-output, freeze-integrity, bibliography, and manuscript-build checks. Hosted CI execution is now verified by run `33634955842`.
+The matrix below records the analytical, numerical, deterministic-output, freeze-integrity, bibliography, and manuscript-build checks. Hosted CI execution is now verified by run `33635911794`.
 
 ## 23. Stage 9 Kill Tests
 
@@ -188,7 +188,7 @@ The matrix below records the analytical, numerical, deterministic-output, freeze
 | 9 Dependency Reproducibility | PASS |
 | 10 Manuscript Scaffold | PASS — hosted compilation |
 | 11 Bibliographic Integrity | PASS — empty placeholder by design; no fabricated entries |
-| 12 CI | PASS — hosted run `33634955842`; both jobs received runners |
+| 12 CI | PASS — hosted run `33635911794`; both jobs received runners |
 | 13 No Theory Drift | PASS |
 | 14 Auditability | PASS |
 
@@ -226,17 +226,17 @@ PR #2 changed files: **49**
 
 Stage 8 paths changed: **0**
 
-Final Stage 9 branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`
+Final Stage 9 branch HEAD: `8c39cc32866eb8212bf804253a2ab0ff74012af3`
 
 Stage 9 base implementation commit: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
 
 Stage 9 CI-recovery implementation commit: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 
-Hosted CI final run: `33634955842`
+Hosted CI final run: `33635911794`
 
-Hosted `verification`: **PASS** — job `100263388675`, runner `1000007154`, 19 passed, 0 skipped
+Hosted `verification`: **PASS** — job `100266613809`, runner `1000007174`, 19 passed, 0 skipped
 
-Hosted `manuscript-build`: **PASS** — job `100263388233`, runner `1000007153`, LaTeX scaffold compiled
+Hosted `manuscript-build`: **PASS** — job `100266614130`, runner `1000007175`, LaTeX scaffold compiled
 
 Numerical verification: **PASS** — 10,000 admissible draws; 0 demand, effort-positivity, ordering, and widening-wedge failures
 

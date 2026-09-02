@@ -38,10 +38,10 @@ PR #2 changed-file audit: PASS. No path under `stage8/**` is changed.
 
 ## Hosted GitHub Actions validation
 
-Final hosted workflow run: `33634955842` (head `314ce17690c0264db5607212b97b2cd099e1b8b7`).
+Final hosted workflow run: `33635911794` (head `8c39cc32866eb8212bf804253a2ab0ff74012af3`).
 
-- `verification`: **PASS**; job `100263388675`; runner `1000007154`; label `ubuntu-latest`
-- `manuscript-build`: **PASS**; job `100263388233`; runner `1000007153`; label `ubuntu-latest`
+- `verification`: **PASS**; job `100266613809`; runner `1000007174`; label `ubuntu-latest`
+- `manuscript-build`: **PASS**; job `100266614130`; runner `1000007175`; label `ubuntu-latest`
 - Hosted pytest: **19 passed, 0 skipped**
 - Hosted numerical command: `regression_checks.py --check --draws 10000` **PASS**
 - Hosted output regeneration: **PASS**

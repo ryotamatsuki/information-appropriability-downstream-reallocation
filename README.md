@@ -7,7 +7,7 @@ Theory-research project on how downstream reallocation changes incentives to pro
 - Canonical theory: **THEORY FROZEN**
 - Freeze SHA: `ef588465430f618b56cf84445681752702c161e1`
 - Current workflow stage: **Stage 9 — Repository / Reproducibility Setup**
-- Stage 9 status: **GO — READY FOR MERGE**; hosted CI run `33634955842` passed both required jobs; PR #2 remains open pending merge.
+- Stage 9 status: **GO — READY FOR MERGE**; hosted CI run `33635911794` passed both required jobs; PR #2 remains open pending merge.
 
 ## Canonical mechanism
 

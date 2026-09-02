@@ -66,7 +66,7 @@ A dependency/build/path problem is a Stage-9 infrastructure issue. A mismatch be
 
 ## Hosted CI validation
 
-Final hosted workflow run: `33634955842` on branch `stage9/reproducibility-setup`, head `314ce17690c0264db5607212b97b2cd099e1b8b7`.
+Final hosted workflow run: `33635911794` on branch `stage9/reproducibility-setup`, head `8c39cc32866eb8212bf804253a2ab0ff74012af3`.
 
 - `verification`: **PASS** — hosted runner; pytest `19 passed, 0 skipped`; symbolic/welfare/numerical checks; output regeneration; committed-output diff
 - `manuscript-build`: **PASS** — hosted runner; LaTeX tooling installation and scaffold compilation

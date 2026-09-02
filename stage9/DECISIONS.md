@@ -17,4 +17,4 @@ Engineering only; no theory change.
 
 12. Preserve the existing verification contract. The only code repair was `ensure_ascii=False` in `code/generate_outputs.py`, which makes generated `output_manifest.json` byte-identical to the committed deterministic output.
 
-13. Final hosted CI run `33634955842` upgrades Stage 9 to **GO — READY FOR MERGE**. PR #2 remains open because automatic merge authorization is not explicit.
+13. Final hosted CI run `33635911794` upgrades Stage 9 to **GO — READY FOR MERGE**. PR #2 remains open because automatic merge authorization is not explicit.

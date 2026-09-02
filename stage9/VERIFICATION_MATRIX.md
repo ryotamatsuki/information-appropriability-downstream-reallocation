@@ -25,6 +25,6 @@
 | clean build | Stage 9 build contract | `Makefile` | local `make all`; hosted fresh checkout and separate jobs | build log | PASS |
 | bibliography integrity | Stage 9 reference policy | `references/references.bib` | empty placeholder intentionally retained; no fabricated metadata; scaffold compiles | `references/README.md` | PASS |
 | Stage-8 freeze integrity | canonical freeze SHA | `tests/test_freeze_integrity.py` | hosted full-history pytest + PR diff audit | PR #2 | PASS |
-| hosted CI runner execution | Stage 9 infrastructure contract | `.github/workflows/ci.yml` | run `33634955842`; both jobs assigned `ubuntu-latest` runners | GitHub Actions logs | PASS |
+| hosted CI runner execution | Stage 9 infrastructure contract | `.github/workflows/ci.yml` | run `33635911794`; both jobs assigned `ubuntu-latest` runners | GitHub Actions logs | PASS |
 | manuscript scaffold compilation | Stage 9 manuscript scaffold | `manuscript/main.tex` | hosted `make manuscript`; one-page PDF | build log | PASS |
 | no theory drift | Stage 8 freeze policy | PR diff + Stage 9 audit | no `stage8/**` changes; no model/theorem changes | Stage 9 report | PASS |
