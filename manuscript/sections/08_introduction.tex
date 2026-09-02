@@ -1,2 +1,29 @@
-\section{Introduction}
-% Stage 10 placeholder only.
+\section{Introduction}\label{sec:introduction}
+
+Downstream routes do more than distribute products. Some of them also generate information that improves what is produced upstream. A service-intensive retailer, field organization, dealer, or other downstream node may diagnose failures, document use conditions, translate customer needs, and communicate those observations to engineers. Once incorporated into an upstream product, the resulting improvement can benefit customers reached through other downstream routes as well. This creates a basic organizational problem: the party that bears the cost of producing information need not capture the value that the information creates throughout the system.
+
+That problem becomes sharper when downstream activity is reallocated. Suppose transactions shift away from an information-producing node toward an alternative route. The local node now has fewer transactions over which to recover the cost of diagnosis and feedback, so its private incentive to produce information can fall. Yet if the information improves an upstream product used through both routes, the system may value that information more, not less, as activity moves toward the alternative route. A downstream reallocation can therefore simultaneously reduce the appropriable return to information production and increase the value of preserving the information input.
+
+This paper asks when these two forces are strong enough to make private and system information incentives move in opposite directions. We study a minimal model with an upstream producer $M$, an information-producing downstream node $S$, and an alternative downstream route $R$. An exogenous index $\eta$ reallocates activity away from $S$ toward $R$. Node $S$ chooses costly, noncontractible information effort $e$, producing an input $x=g(e)$ that improves the upstream product and can raise value through both routes. The private node internalizes only its own-route margin, whereas a coordinated system internalizes the value of information across routes.
+
+The main result is an information-incentive divergence. A shrinking own-route footprint implies that private information effort decreases with downstream reallocation. Coordinated information effort increases when the expanding route's weighted marginal return to product-improvement information exceeds the return lost on the shrinking route. Formally, under the maintained regularity conditions and
+\[
+A_R\omega_R'(\eta)D_R'(x)>-A_S\omega_S'(\eta)D_S'(x),
+\]
+we obtain
+\[
+\frac{d\Eprivate}{d\eta}<0<\frac{d\Ecoordinated}{d\eta}.
+\]
+The condition is economically restrictive rather than automatic. If information has no value through the expanding route, the positive coordinated response disappears. Under one-for-one reallocation with equal marginal information productivity across routes, the condition reduces to the transparent requirement $A_R>A_S$.
+
+A utility-based benchmark separates private, coordinated, and social incentives. With quasilinear demand, linear product improvement, quadratic effort cost, and lower real distribution cost on the expanding route, effort satisfies
+\[
+\Eprivate<\Ecoordinated<\Esocial.
+\]
+Moreover, both the private--coordinated and private--social effort gaps widen as activity reallocates toward the alternative route. Vertical coordination therefore does not exhaust the welfare problem: consumer-surplus gains from product improvement create an additional wedge between coordinated and socially optimal information effort.
+
+The same logic has a limited organizational implication. Around a valid private retention threshold, private organization can stop retaining an information-producing downstream capacity even though social welfare still favors retention. This result is local and conditional; it is not a general theory of foreclosure or channel structure. Its role is to show how the information-effort wedge can translate into an organizational margin.
+
+The analysis is related to work on downstream information acquisition and vertical sharing \citep{Guo2009,GuoIyer2010}, user innovation and externalities \citep{GambardellaRaaschVonHippel2017}, information acquisition under manufacturer encroachment \citep{HuEtAl2021}, information sharing with endogenous channel structure and investment spillovers \citep{HuangChenGuan2020}, and vertical contracting with endogenous downstream structure \citep{PagnozziPiccoloReisinger2021}. These literatures establish that downstream information, information acquisition and sharing, user-originated innovation, spillovers, and channel organization can be economically important. Our contribution is narrower. We isolate a reallocation-induced sign reversal: the information producer's private effort falls while coordinated information demand rises because the information remains reusable through the route gaining activity. We do not claim novelty for information externalities, user innovation, retailer information, or endogenous channel structure themselves.
+
+The rest of the paper proceeds as follows. Section~\ref{sec:model} defines the general environment. Section~\ref{sec:equilibrium} characterizes private and coordinated information effort, and Section~\ref{sec:mainresults} establishes the main divergence theorem and its structural corollaries. Section~\ref{sec:welfare} develops the welfare benchmark. Section~\ref{sec:robustness} explains the scope of the result, Section~\ref{sec:institutional} connects the primitives to institutional interpretation and frozen empirical predictions, and Section~\ref{sec:literature} positions the mechanism relative to the closest literatures. Sections~\ref{sec:discussion} and \ref{sec:conclusion} discuss scope and conclude.
