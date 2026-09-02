@@ -1,2 +1,111 @@
-\section{Welfare}
-% Stage 10 placeholder only.
+\section{Welfare}\label{sec:welfare}
+
+The coordinated benchmark in Section~\ref{sec:equilibrium} internalizes route-level system returns but is not identical to social welfare. This section introduces a quasilinear microfoundation that separates the private, coordinated, and social effort choices and shows how the associated wedges evolve with downstream reallocation.
+
+\subsection{A microfounded benchmark}
+
+Let the masses of consumers attached to routes $S$ and $R$ be $1-h(\eta)$ and $h(\eta)$, respectively, where
+\[
+    0<h(\eta)<1, \qquad h'(\eta)>0.
+\]
+A representative consumer obtains quasilinear utility
+\begin{equation}
+    u(q,x)=(a+x)q-\frac{q^2}{2}-pq,
+    \label{eq:utility}
+\end{equation}
+so per-capita demand is
+\begin{equation}
+    d(x)=a+x-p.
+    \label{eq:demand}
+\end{equation}
+We assume $a>p>c_S>c_R\geq0$, where $c_S$ and $c_R$ are real distribution costs. Product improvement and effort cost are
+\[
+    x=\beta e, \qquad C(e)=\frac{k e^2}{2},
+\]
+with $\beta>0$ and $k>\beta^2$. Aggregate route quantities are
+\[
+    q_S=(1-h)d(x), \qquad q_R=h d(x).
+\]
+
+Let the information producer's private margin be $m$, with $0<m<p-c_S$. Writing the remaining upstream component of the route-$S$ system margin as $b>0$, we have $b+m=p-c_S$. The coordinated system margins are therefore $p-c_S$ on route $S$ and $p-c_R$ on route $R$.
+
+\subsection{Private, coordinated, and social effort}
+
+The private effort choice solves
+\[
+    \max_e\; m(1-h)(a+\beta e-p)-\frac{k e^2}{2},
+\]
+which gives
+\begin{equation}
+    \Eprivate=\frac{m\beta(1-h)}{k}.
+    \label{eq:ep}
+\end{equation}
+The coordinated system chooses effort to maximize operating surplus across both routes net of effort cost, yielding
+\begin{equation}
+    \Ecoordinated
+    =\frac{\beta\left[(p-c_S)(1-h)+(p-c_R)h\right]}{k}.
+    \label{eq:ec}
+\end{equation}
+
+Social welfare includes consumer surplus and real production/distribution surplus. Since demand is $d=a+\beta e-p$, aggregate consumer surplus is $d^2/2$. Maximizing total surplus gives
+\begin{equation}
+    \Esocial
+    =\frac{\beta\left[a-c_S(1-h)-c_Rh\right]}{k-\beta^2}.
+    \label{eq:ew}
+\end{equation}
+The restriction $k>\beta^2$ guarantees strict concavity of the social problem.
+
+\begin{theorem}[Effort ordering]\label{thm:welfareordering}
+Under $a>p>c_S>c_R\geq0$, $0<m<p-c_S$, $\beta>0$, $k>\beta^2$, and $0<h<1$,
+\begin{equation}
+    \Eprivate<\Ecoordinated<\Esocial.
+    \label{eq:ordering}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Using \eqref{eq:ep}--\eqref{eq:ec},
+\[
+\Ecoordinated-\Eprivate
+=\frac{\beta}{k}\left[(p-c_S-m)(1-h)+(p-c_R)h\right]>0,
+\]
+because $p-c_S-m>0$ and $p-c_R>0$. Let
+\[
+M=(p-c_S)(1-h)+(p-c_R)h>0.
+\]
+The numerator in \eqref{eq:ew} equals $M+(a-p)$. Hence
+\[
+\Esocial-\Ecoordinated
+=\frac{\beta\left[k(a-p)+\beta^2M\right]}{k(k-\beta^2)}>0,
+\]
+because $a>p$, $M>0$, and $k>\beta^2$. This proves the strict ordering.
+\end{proof}
+
+The first wedge reflects incomplete appropriability within the vertical system: $S$ captures only its own margin rather than the system margin associated with product improvement. The second wedge reflects the additional consumer-surplus value of quality improvement. These are distinct objects; vertical coordination does not generally implement the social optimum.
+
+\subsection{Widening wedges under reallocation}
+
+Differentiating the private--coordinated gap gives
+\begin{equation}
+    \frac{d(\Ecoordinated-\Eprivate)}{d\eta}
+    =\frac{\beta h'(\eta)}{k}\left[(c_S-c_R)+m\right]>0.
+    \label{eq:wedgepc}
+\end{equation}
+The gap widens because reallocation simultaneously reduces the information producer's private footprint and shifts system activity toward the lower-real-cost route.
+
+The private--social gap also widens. Differentiating \eqref{eq:ew} and \eqref{eq:ep} gives
+\begin{equation}
+    \frac{d(\Esocial-\Eprivate)}{d\eta}
+    =\beta h'(\eta)
+    \left[
+    \frac{c_S-c_R}{k-\beta^2}+\frac{m}{k}
+    \right]>0.
+    \label{eq:wedgepw}
+\end{equation}
+Thus downstream reallocation can increase the social value of information provision at precisely the time when the decentralized information producer has a weaker incentive to provide it.
+
+\subsection{Organizational implication}
+
+The benchmark also supports a limited organizational implication. Consider a separate retention decision in which maintaining the information-producing downstream capacity is privately worthwhile only above a threshold. At an interior private retention-indifference point, the manufacturer's incremental private return from retention is zero. If the retained information-producing node earns a positive equilibrium payoff and the associated product improvement raises consumer surplus, social welfare strictly favors retention at that point. By continuity, provided there is a genuine private non-retention side of the threshold, there exists a nonempty local region in which private organization drops the information-producing capacity while social welfare favors retaining it.
+
+This is deliberately a local and conditional result. It is not a general foreclosure theorem, nor does it imply that retaining the information-producing route is always efficient. Its role is to translate the effort wedge into an organizational margin without adding a new strategic mechanism.

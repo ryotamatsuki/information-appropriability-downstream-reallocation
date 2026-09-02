@@ -35,11 +35,40 @@ jobs:
   manuscript-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout full history
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - name: Install minimal LaTeX tooling
         run: |
           sudo apt-get update
           sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended
-      - name: Compile manuscript scaffold
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13.5'
+          cache: pip
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Compile manuscript
         run: make manuscript
+      - name: Check bibliography and cross-references resolve
+        run: |
+          test -s manuscript/build/main.bbl
+          if grep -Eq 'Citation .* undefined|There were undefined citations|There were undefined references' manuscript/build/main.log; then
+            echo 'Unresolved manuscript citation or cross-reference detected.' >&2
+            exit 1
+          fi
+      - name: Run full clean integration build
+        run: make all
+      - name: Check full-build bibliography and cross-references resolve
+        run: |
+          test -s manuscript/build/main.bbl
+          if grep -Eq 'Citation .* undefined|There were undefined citations|There were undefined references' manuscript/build/main.log; then
+            echo 'Unresolved manuscript citation or cross-reference detected after make all.' >&2
+            exit 1
+          fi
+      - name: Check full-build generated outputs are current
+        run: git diff --exit-code -- outputs/
