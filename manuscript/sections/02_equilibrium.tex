@@ -1,2 +1,71 @@
-\section{Equilibrium Characterization}
-% Stage 10 placeholder only.
+\section{Equilibrium Characterization}\label{sec:equilibrium}
+
+We first characterize the effort chosen by the information-producing node and then the effort preferred by a vertically coordinated system. The comparison isolates the source of the appropriability wedge before imposing any parametric demand structure.
+
+\subsection{Private information effort}
+
+Differentiating \eqref{eq:privateobjective} with respect to effort gives the private first-order condition
+\begin{equation}
+    \Phi_P(e,\eta)
+    \equiv
+    m_S\omega_S(\eta)D_S'(g(e))g'(e)-C'(e)=0.
+    \label{eq:privatefoc}
+\end{equation}
+Let $\Eprivate(\eta)$ denote the unique interior solution. We assume the private second-order condition
+\begin{equation}
+    \Phi_{P,e}(\Eprivate,\eta)<0.
+    \label{eq:privatesoc}
+\end{equation}
+By the Implicit Function Theorem,
+\begin{equation}
+    \frac{d\Eprivate}{d\eta}
+    =-
+    \frac{m_S\omega_S'(\eta)D_S'(g(\Eprivate))g'(\Eprivate)}
+    {\Phi_{P,e}(\Eprivate,\eta)}.
+    \label{eq:privateift}
+\end{equation}
+Because $m_S>0$, $D_S'>0$, $g'>0$, $\omega_S'<0$, and the denominator is negative, the private effort response is negative. Reallocation reduces the number of own-route transactions over which $S$ can appropriate the return to its information effort.
+
+\subsection{Coordinated information effort}
+
+Differentiating \eqref{eq:coordinatedobjective} yields
+\begin{align}
+    \Phi_C(e,\eta)
+    \equiv{}&
+    \left[A_S\omega_S(\eta)D_S'(g(e))
+    +A_R\omega_R(\eta)D_R'(g(e))\right]g'(e)
+    -C'(e)=0.
+    \label{eq:coordinatedfoc}
+\end{align}
+Let $\Ecoordinated(\eta)$ denote the unique interior coordinated solution and assume
+\begin{equation}
+    \Phi_{C,e}(\Ecoordinated,\eta)<0.
+    \label{eq:coordinatedsoc}
+\end{equation}
+The Implicit Function Theorem gives
+\begin{equation}
+    \frac{d\Ecoordinated}{d\eta}
+    =-
+    \frac{
+    \left[A_S\omega_S'(\eta)D_S'(g(\Ecoordinated))
+    +A_R\omega_R'(\eta)D_R'(g(\Ecoordinated))\right]g'(\Ecoordinated)
+    }
+    {\Phi_{C,e}(\Ecoordinated,\eta)}.
+    \label{eq:coordinatedift}
+\end{equation}
+Unlike the private derivative, the numerator in \eqref{eq:coordinatedift} contains two reallocation effects. The first is negative: the system loses information value through the shrinking route $S$. The second is positive: the same information becomes more valuable through the expanding route $R$. Since the denominator is negative, the sign of the coordinated response is determined by the sign of the bracketed weighted marginal-return term.
+
+\subsection{The appropriability wedge}
+
+Equations \eqref{eq:privateift} and \eqref{eq:coordinatedift} make the distinction between private and coordinated incentives explicit. The private chooser sees only
+\[
+    m_S\omega_S'(\eta)D_S'(x),
+\]
+which is negative whenever the information producer's footprint shrinks. The coordinated system instead sees
+\[
+    A_S\omega_S'(\eta)D_S'(x)
+    +A_R\omega_R'(\eta)D_R'(x),
+\]
+which can be positive because information is reusable through the expanding route. Thus the relevant inefficiency is not simply that information creates a positive externality. It is that downstream reallocation changes the relative weights on appropriable and nonappropriable returns to the same information input.
+
+The next section states the exact condition under which the two responses have opposite signs.
