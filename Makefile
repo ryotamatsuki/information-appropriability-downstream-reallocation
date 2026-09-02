@@ -14,7 +14,7 @@ outputs:
 	PYTHONPATH=code $(PYTHON) code/generate_outputs.py
 
 manuscript:
-	cd manuscript && latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
+	cd manuscript && BIBINPUTS="$(CURDIR)/references:" latexmk -pdf -interaction=nonstopmode -halt-on-error -outdir=build main.tex
 
 all: clean verify outputs manuscript
 
