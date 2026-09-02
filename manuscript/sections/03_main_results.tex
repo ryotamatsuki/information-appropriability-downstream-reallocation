@@ -1,2 +1,66 @@
-\section{Main Propositions}
-% Stage 10 placeholder only.
+\section{Main Results}\label{sec:mainresults}
+
+The central result identifies when downstream reallocation makes private and coordinated information incentives move in opposite directions. The key condition compares the marginal system value lost on the shrinking route with the marginal system value gained on the expanding route.
+
+\begin{lemma}[Private information effort]\label{lem:private}
+Suppose the private effort problem has a unique interior optimum and satisfies \eqref{eq:privatesoc}. If $\omega_S'(\eta)<0$, then
+\[
+    \frac{d\Eprivate}{d\eta}<0.
+\]
+\end{lemma}
+
+\begin{proof}
+Equation \eqref{eq:privateift} applies by the Implicit Function Theorem. Its numerator is negative because $m_S>0$, $D_S'>0$, $g'>0$, and $\omega_S'<0$. Its denominator is negative by \eqref{eq:privatesoc}. The leading minus sign therefore implies $d\Eprivate/d\eta<0$.
+\end{proof}
+
+Lemma~\ref{lem:private} is mechanically simple but economically important. The information producer's private return is tied to its own route. A shift of activity away from that route reduces the marginal revenue available to compensate costly information production even though the information remains technologically useful elsewhere.
+
+Define condition (G) by
+\begin{equation}
+    A_R\omega_R'(\eta)D_R'(x)
+    >-A_S\omega_S'(\eta)D_S'(x).
+    \tag{G}\label{eq:G}
+\end{equation}
+Condition (G) says that the weighted marginal system return created by expansion of route $R$ exceeds the weighted marginal system return lost through contraction of route $S$.
+
+\begin{theorem}[Information-Incentive Divergence under Downstream Reallocation]\label{thm:divergence}
+Suppose (i) $\omega_S'<0$ and $\omega_R'>0$; (ii) information effort is noncontractible and its returns are incompletely appropriable by $S$; (iii) $D_S',D_R',g'>0$; (iv) the private and coordinated effort problems have unique interior optima satisfying \eqref{eq:privatesoc} and \eqref{eq:coordinatedsoc}; and (v) condition \eqref{eq:G} holds at the coordinated optimum. Then
+\begin{equation}
+    \frac{d\Eprivate}{d\eta}<0<\frac{d\Ecoordinated}{d\eta}.
+    \label{eq:divergence}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+The private inequality follows from Lemma~\ref{lem:private}. For the coordinated problem, condition \eqref{eq:G} makes the bracketed term in the numerator of \eqref{eq:coordinatedift} strictly positive. Since $g'>0$ and $\Phi_{C,e}<0$, equation \eqref{eq:coordinatedift} implies $d\Ecoordinated/d\eta>0$.
+\end{proof}
+
+Theorem~\ref{thm:divergence} is the main result. Its content is a reallocation-induced divergence, not an unconditional claim that downstream displacement reduces information production. The private response is driven by a shrinking appropriable footprint. The coordinated response is positive only when reusable information has sufficiently high marginal value through the route gaining activity. Reallocation therefore changes not only where transactions occur but also the alignment between the location of information production and the location where its value is realized.
+
+\subsection{Why cross-route reuse is essential}
+
+\begin{corollary}[Cross-route necessity]\label{cor:reuse}
+Within the separable model, if the expanding route receives no product-improvement benefit, so that $D_R'(x)=0$, then the coordinated response cannot be positive under the maintained signs. In particular,
+\[
+    \frac{d\Ecoordinated}{d\eta}<0.
+\]
+\end{corollary}
+
+\begin{proof}
+Setting $D_R'=0$ makes the bracket in \eqref{eq:coordinatedift} equal to $A_S\omega_S'D_S'$, which is strictly negative. With $g'>0$ and $\Phi_{C,e}<0$, the coordinated derivative is negative.
+\end{proof}
+
+Corollary~\ref{cor:reuse} disciplines the mechanism. Merely moving activity away from an information-producing node is not enough to generate the sign reversal. The alternative route must actually benefit from the information. Cross-route technological reuse is therefore a structural requirement for the positive coordinated response in this model class.
+
+\begin{corollary}[One-for-one reallocation]\label{cor:oneforone}
+Suppose route activity is reallocated one for one, $\omega_R'=-\omega_S'>0$, and the marginal demand response to product improvement is the same across routes, $D_R'=D_S'>0$. Then condition \eqref{eq:G} is equivalent to
+\[
+    A_R>A_S.
+\]
+\end{corollary}
+
+\begin{proof}
+Substituting $\omega_R'=-\omega_S'$ and $D_R'=D_S'$ into \eqref{eq:G} yields a common positive factor multiplying $A_R-A_S$.
+\end{proof}
+
+This special case provides a transparent interpretation of condition (G): when a unit of activity moves across otherwise symmetric routes, coordinated information demand rises if the system margin attached to the expanding route is larger. The corollary is an interpretive benchmark rather than a separate contribution.
