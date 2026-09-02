@@ -2,13 +2,13 @@
 
 ## 1. Executive Verdict
 
-**CONDITIONAL GO**
+**GO — READY FOR MERGE**
 
-Exactly one infrastructure blocker remains: GitHub Actions jobs are created but fail before any runner is assigned. The available GitHub API shows both jobs with `runner_id: 0`, empty runner names, and zero steps. No repository code or workflow step executes, so this is classified as a CI infrastructure / runner-allocation blocker rather than a theory-verification failure.
+The GitHub-hosted runner-allocation failure has been resolved by rerunning the existing workflow. Final hosted run `33634955842` executed both jobs on `ubuntu-latest` and completed successfully. A single Stage 9 implementation defect was found after runner allocation in the generated manifest's Unicode serialization and fixed in commit `314ce17690c0264db5607212b97b2cd099e1b8b7`; no theory change was made.
 
 ## 2. Repository Status
 
-Production reproducibility architecture is implemented on `stage9/reproducibility-setup` and exposed in PR #2. The PR is intentionally not merged.
+Production reproducibility architecture is implemented on `stage9/reproducibility-setup` and exposed in PR #2. Final branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`. The PR remains intentionally open and is **READY FOR MERGE** pending the project's merge authorization.
 
 ## 3. Theory Freeze Verification
 
@@ -100,15 +100,15 @@ Smoke checks cover small `beta`, route shares near 0/1, a vanishing distribution
 
 ## 13. Tests
 
-Local final suite: **18 passed, 1 skipped**.
+Local final suite: **18 passed, 1 skipped**. The sole local skip is the Git-history freeze-integrity test because the isolated local execution directory is not a Git checkout.
 
-The sole local skip is the Git-history freeze-integrity test because the isolated execution directory is not a Git checkout. That integrity condition is independently verified from the actual PR changed-file set.
+Hosted final suite: **19 passed, 0 skipped**. The hosted full-history checkout executed the freeze-integrity test successfully.
 
 ## 14. Deterministic Outputs
 
 **PASS**
 
-Two successive local regenerations produced identical SHA256 hashes for all committed files in `outputs/`.
+Two successive local regenerations produced identical SHA256 hashes for all committed files in `outputs/`. In hosted run `33634955842`, `make outputs` completed and `git diff --exit-code -- outputs/` passed after the manifest serialization repair.
 
 ## 15. LaTeX Scaffold
 
@@ -130,9 +130,9 @@ Two successive local regenerations produced identical SHA256 hashes for all comm
 
 ## 18. Freeze Integrity Guard
 
-**PASS in repository diff; CI execution blocked before runner allocation.**
+**PASS in the repository diff and hosted CI.**
 
-The test compares `stage8/**` against the canonical freeze SHA. PR #2 independently confirms no Stage-8 file is changed.
+PR #2 changes 49 files and none is under `stage8/**`. The hosted `verification` job checked out full history and included the freeze-integrity test in its **19 passed** pytest result. No Stage-8 file was modified.
 
 ## 19. CI Architecture
 
@@ -144,11 +144,22 @@ The workflow uses official `actions/checkout@v7` and `actions/setup-python@v7`.
 
 ## 20. CI Result
 
-**NOT FEASIBLE — INFRASTRUCTURE BLOCKER**
+**PASS — HOSTED CI VERIFIED**
 
-Initial run: `33173228843`.
+Final hosted workflow run: `33634955842`  
+Head SHA: `314ce17690c0264db5607212b97b2cd099e1b8b7`  
+Conclusion: **success**
 
-Both `verification` and `manuscript-build` were marked failure before runner assignment. GitHub reports `runner_id: 0`, empty runner names, and `steps: []` for both jobs. Therefore no workflow step executed and no code-level CI failure was observed.
+Jobs:
+
+- `verification`: job `100263388675`, runner `1000007154`, label `ubuntu-latest` — **success**
+- `manuscript-build`: job `100263388233`, runner `1000007153`, label `ubuntu-latest` — **success**
+
+The `verification` job executed checkout, Python 3.13.5 setup, pinned dependency installation, symbolic and welfare checks, pytest (**19 passed**), 10,000-draw numerical regression, deterministic output regeneration, and committed-output diff validation. The `manuscript-build` job executed LaTeX tooling installation and compiled the one-page scaffold successfully.
+
+Historical runs `33173228843` and `33173509100` failed before runner assignment with `runner_id: 0`, empty runner names, and zero steps. On rerun attempt 3 of `33173509100`, hosted runners were assigned and the only failure was the genuine generated-manifest Unicode diff, which was fixed in `314ce17690c0264db5607212b97b2cd099e1b8b7`.
+
+The runner-allocation failure is classified as a transient GitHub-hosted Actions scheduling/infrastructure issue. The same private repository, workflow, `ubuntu-latest` label, and read-only workflow permissions subsequently received hosted runners and passed; this is inconsistent with a persistent repository disablement, invalid label, unsupported image, or repository-code failure. GitHub's official incident history records Actions job-start and PR-triggered Actions disruptions during the same period.
 
 ## 21. Clean-Build Result
 
@@ -158,24 +169,26 @@ Both `verification` and `manuscript-build` were marked failure before runner ass
 
 ## 22. Verification Matrix
 
-**COMPLETE**, with CI runner execution recorded as the sole unresolved infrastructure item.
+**COMPLETE — all local and hosted CI gates pass.**
+
+The matrix below records the analytical, numerical, deterministic-output, freeze-integrity, bibliography, and manuscript-build checks. Hosted CI execution is now verified by run `33634955842`.
 
 ## 23. Stage 9 Kill Tests
 
 | Kill test | Result |
 |---|---|
-| 1 Freeze Integrity | PASS |
+| 1 Freeze Integrity | PASS — repository diff and hosted full-history pytest |
 | 2 Symbolic Reproduction | PASS |
 | 3 Welfare Reproduction | PASS |
 | 4 Condition G | PASS |
 | 5 Cross-Route Necessity | PASS |
 | 6 Determinism | PASS |
-| 7 Numerical Regression | PASS |
-| 8 Fresh/Clean Build | PASS locally |
+| 7 Numerical Regression | PASS — 10,000 draws; 100 direct optimizations; 5/5 boundaries |
+| 8 Fresh/Clean Build | PASS locally; hosted output regeneration and manuscript build PASS |
 | 9 Dependency Reproducibility | PASS |
-| 10 Manuscript Scaffold | PASS |
-| 11 Bibliographic Integrity | PASS |
-| 12 CI | WARNING — runner allocation unavailable |
+| 10 Manuscript Scaffold | PASS — hosted compilation |
+| 11 Bibliographic Integrity | PASS — empty placeholder by design; no fabricated entries |
+| 12 CI | PASS — hosted run `33634955842`; both jobs received runners |
 | 13 No Theory Drift | PASS |
 | 14 Auditability | PASS |
 
@@ -187,13 +200,13 @@ No new theorem, mechanism, strategic variable, welfare friction, or substantive 
 
 ## 25. Stage Verdict
 
-**CONDITIONAL GO**
+**GO — READY FOR MERGE**
 
 ## 26. Routing / Status
 
-**REPRODUCIBILITY READY EXCEPT FOR ONE CI INFRASTRUCTURE BLOCKER.**
+**REPRODUCIBILITY READY — HOSTED CI VERIFIED.**
 
-Do not merge PR #2 automatically. Resolve or explicitly accept the GitHub Actions runner-allocation blocker, rerun CI, and then re-evaluate Stage 9 for GO.
+PR #2 is open, mergeable, and contains no Stage-8 changes. The final PR diff audit is complete. Leave PR #2 open unless merge authorization is explicit; once merged, the canonical next route is Stage 10 — Manuscript Drafting.
 
 ## 27. Stage 10 Contract
 
@@ -201,66 +214,58 @@ Stage 10 may begin only after Stage 9 is upgraded to GO and PR #2 is merged. Sta
 
 # Canonical Stage 9 Handoff Record
 
-Stage 9 verdict: **CONDITIONAL GO**
+Stage 9 verdict: **GO — READY FOR MERGE**
 
 Repository: `ryotamatsuki/information-appropriability-downstream-reallocation`
 
 Canonical theory freeze SHA: `ef588465430f618b56cf84445681752702c161e1`
 
-Theory freeze integrity: **PASS**
+Stage 8 theory freeze integrity: **PASS**
 
-Repository architecture: **READY**
+PR #2 changed files: **49**
 
-Python environment: **3.13.5**
+Stage 8 paths changed: **0**
 
-Dependency lock: **PASS**
+Final Stage 9 branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 
-Symbolic verification: **PASS**
+Stage 9 base implementation commit: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
 
-Numerical verification: **PASS**
+Stage 9 CI-recovery implementation commit: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 
-Welfare verification: **PASS**
+Hosted CI final run: `33634955842`
 
-General theorem verification: **PASS**
+Hosted `verification`: **PASS** — job `100263388675`, runner `1000007154`, 19 passed, 0 skipped
 
-Cross-route necessity verification: **PASS**
+Hosted `manuscript-build`: **PASS** — job `100263388233`, runner `1000007153`, LaTeX scaffold compiled
 
-P1 special-case verification: **PASS — ROBUSTNESS / SPECIAL CASE ONLY**
+Numerical verification: **PASS** — 10,000 admissible draws; 0 demand, effort-positivity, ordering, and widening-wedge failures
 
-P4 status: **KILLED**
+Direct optimization: **PASS** — 100 cases; maximum absolute error `1.18792918258e-06 < 2e-06`
 
-Deterministic outputs: **PASS**
+Boundary checks: **PASS — 5/5**
 
-Clean build: **PASS locally**
+Deterministic generated outputs: **PASS**
 
-Manuscript scaffold: **PASS**
+Committed-output diff consistency: **PASS**
 
-Bibliography integrity: **PASS**
+Bibliography integrity: **PASS** — empty placeholder intentionally retained pending verified import
 
-CI: **NOT FEASIBLE — runner-allocation infrastructure blocker**
+Runner allocation: **PASS** — both hosted jobs assigned `ubuntu-latest` runners and executed steps
 
-CI run: `33173228843`
-
-Freeze-integrity guard: **PASS by actual PR diff; CI execution unavailable**
-
-Verification matrix: **COMPLETE**
-
-Reproducibility manifest: **COMPLETE**
+Historical runner blocker: **RESOLVED** — transient GitHub-hosted Actions scheduling/infrastructure failure
 
 Theory changes introduced: **NONE**
 
 Theory rollback required: **NO**
 
-One precise blocker: **GitHub Actions jobs fail before runner assignment (`runner_id=0`, no runner name, zero steps), so clean hosted CI cannot currently execute.**
+P1 status: **ROBUSTNESS / SPECIAL CASE ONLY**
 
-Stage 9 branch: `stage9/reproducibility-setup`
+P4 status: **KILLED**
 
-Stage 9 implementation commit: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
-
-Stage 9 PR: **#2 — Stage 9 — Repository and Reproducibility Setup**
+Stage 9 PR: **#2 — OPEN / MERGEABLE / READY FOR MERGE**
 
 What Stage 10 may change: manuscript prose, exposition, equation numbering, section integration, verified bibliography integration.
 
 What Stage 10 may NOT change: frozen theory, players, timing, information structure, condition (G), theorem results, welfare ordering, killed claims, or novelty boundary.
 
-Next route: **RESOLVE/ACCEPT THE SINGLE CI INFRASTRUCTURE BLOCKER → RERUN STAGE 9 CI → GO/MERGE → STAGE 10.**
+Next route: **MERGE PR #2 ONLY WITH EXPLICIT AUTHORIZATION → STAGE 10 — MANUSCRIPT DRAFTING**

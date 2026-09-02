@@ -63,3 +63,12 @@ make all
 ## Troubleshooting
 
 A dependency/build/path problem is a Stage-9 infrastructure issue. A mismatch between code-derived formulas and the frozen Stage-8 theory is a **theory verification failure** and must not be repaired by silently changing the theory; follow the rollback policy.
+
+## Hosted CI validation
+
+Final hosted workflow run: `33634955842` on branch `stage9/reproducibility-setup`, head `314ce17690c0264db5607212b97b2cd099e1b8b7`.
+
+- `verification`: **PASS** — hosted runner; pytest `19 passed, 0 skipped`; symbolic/welfare/numerical checks; output regeneration; committed-output diff
+- `manuscript-build`: **PASS** — hosted runner; LaTeX tooling installation and scaffold compilation
+- Stage-8 freeze integrity: **PASS** — full-history checkout and PR diff audit
+- Stage 9 verdict: **GO — READY FOR MERGE**

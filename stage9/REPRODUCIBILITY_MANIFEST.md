@@ -2,6 +2,7 @@
 
 - Canonical freeze SHA: `ef588465430f618b56cf84445681752702c161e1`
 - Stage 9 branch: `stage9/reproducibility-setup`
+- Final Stage 9 branch HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 - Python: `3.13.5`
 - SymPy: `1.14.0`
 - pytest: `9.0.2`
@@ -11,14 +12,26 @@
 - Symbolic scripts: `code/symbolic/general_model.py`, `welfare_model.py`, `special_case.py`
 - Numerical scripts: `code/numerical/parameter_checks.py`, `regression_checks.py`
 - Local tests: `18 passed, 1 checkout-only skip`
+- Hosted tests: `19 passed, 0 skipped`
 - CI workflow: `.github/workflows/ci.yml`
+- Final hosted workflow run: `33634955842`
+- Hosted `verification`: **PASS**; job `100263388675`; runner `1000007154`; `ubuntu-latest`
+- Hosted `manuscript-build`: **PASS**; job `100263388233`; runner `1000007153`; `ubuntu-latest`
 - Build commands: `make verify`, `make outputs`, `make manuscript`, `make all`, `make clean`
 - Output files: `symbolic_results.txt`, `welfare_results.txt`, `numerical_checks.csv`, `output_manifest.json`
-- Deterministic-output repeat check: `PASS`
-- Manuscript build status: `PASS locally`
-- Initial CI run ID: `33173228843`
-- CI status: `NOT FEASIBLE — both jobs failed before runner assignment; runner_id=0; zero steps`
-- Stage 9 implementation commit SHA: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
+- Numerical regression: **PASS** — 10,000 draws; zero recorded failures
+- Direct optimization: **PASS** — 100 cases; max absolute error `1.18792918258e-06`
+- Boundary checks: **PASS — 5/5**
+- Deterministic-output repeat check: **PASS**
+- Hosted committed-output diff check: **PASS**
+- Manuscript build: **PASS** — hosted LaTeX compilation
+- Bibliography integrity: **PASS** — empty placeholder intentionally retained
+- Freeze integrity: **PASS** — no `stage8/**` changes; hosted full-history test passed
+- Runner allocation: **PASS** — both required jobs received hosted runners
+- Runner-allocation blocker: **RESOLVED** — transient hosted Actions scheduling/infrastructure issue
+- Stage 9 implementation commit: `c11a3628aa28515a3462f35c218a8bf2339cad5a`
+- Stage 9 CI-recovery commit: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 - Stage 9 PR: `#2`
-- Stage 9 verdict: `CONDITIONAL GO`
-- One blocker: `GitHub Actions runner allocation unavailable before job execution`
+- Stage 9 verdict: **GO — READY FOR MERGE**
+- Theory changes introduced: **NONE**
+- Theory rollback required: **NO**

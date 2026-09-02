@@ -12,3 +12,9 @@ Engineering only; no theory change.
 8. Treat `stage8/**` as immutable and enforce this relative to the freeze SHA.
 9. P1 stays regression/special-case only; no P4 analysis is implemented.
 10. Do not begin Stage 10 prose in this branch.
+
+11. Historical `runner_id=0` failures are treated as an external hosted-Actions scheduling/infrastructure incident because the unchanged repository later received standard hosted runners and executed successfully; no repository-side runner workaround was added.
+
+12. Preserve the existing verification contract. The only code repair was `ensure_ascii=False` in `code/generate_outputs.py`, which makes generated `output_manifest.json` byte-identical to the committed deterministic output.
+
+13. Final hosted CI run `33634955842` upgrades Stage 9 to **GO — READY FOR MERGE**. PR #2 remains open because automatic merge authorization is not explicit.

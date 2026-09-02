@@ -1,13 +1,17 @@
 # Research Status
 
-- Workflow: `research-paper-workflow v1.0`
 - Canonical theory status: **THEORY FROZEN**
-- Freeze SHA: `ef588465430f618b56cf84445681752702c161e1`
 - Current stage: **Stage 9 — Repository / Reproducibility Setup**
-- Stage 9 verdict: **CONDITIONAL GO**
+- Stage 9 verdict: **GO — READY FOR MERGE**
 - Stage 9 branch: `stage9/reproducibility-setup`
+- Stage 9 HEAD: `314ce17690c0264db5607212b97b2cd099e1b8b7`
 - Stage 9 PR: `#2`
-- Stage 9 merge status: **NOT MERGED**
-- One blocker: GitHub Actions jobs fail before runner assignment; local reproducibility and theory checks pass.
+- Stage 9 merge status: **NOT MERGED — READY FOR MERGE**
+- Hosted CI: **PASS** — run `33634955842`; verification and manuscript-build both received `ubuntu-latest` runners and passed
+- Hosted pytest: **19 passed, 0 skipped**
+- Numerical regression: **PASS** — 10,000 draws; 100 direct-optimization cross-checks; 5/5 boundary checks
+- Freeze integrity: **PASS** — no `stage8/**` changes
+- Theory changes: **NONE**
+- Runner-allocation blocker: **RESOLVED** — transient GitHub-hosted Actions scheduling/infrastructure issue
 
-Stage 10 manuscript prose may begin only after the single CI infrastructure blocker is resolved or explicitly accepted under the workflow rules, Stage 9 is upgraded to GO, and PR #2 is merged into `main`.
+Stage 10 manuscript prose may begin only after PR #2 is merged into `main`.
