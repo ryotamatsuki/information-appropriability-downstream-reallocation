@@ -1,2 +1,64 @@
-\section{Model}
-% Stage 10 placeholder only.
+\section{Model}\label{sec:model}
+
+We study a vertical environment in which information is produced at one downstream node but can improve an upstream product used through multiple downstream routes. The central friction is incomplete appropriability: the downstream node that incurs the cost of generating information internalizes only the return associated with its own activity, whereas the resulting product improvement can create value elsewhere in the system.
+
+\subsection{Economic environment}
+
+There are three economic actors. An upstream producer, denoted by $M$, supplies a product that is used through two downstream routes. Route $S$ is an information-producing downstream node. Route $R$ is an alternative downstream route. The upstream producer is not an active strategic chooser in the core comparative-static problem; its role is to make the information generated at $S$ technologically reusable across routes through product improvement.
+
+Let $\eta$ denote an exogenous downstream-reallocation index. A higher $\eta$ shifts activity away from $S$ and toward $R$. Route activity is represented by positive weights $\omega_S(\eta)$ and $\omega_R(\eta)$ satisfying
+\begin{equation}
+    \omega_S'(\eta)<0, \qquad \omega_R'(\eta)>0.
+    \label{eq:routeweights}
+\end{equation}
+The parameter $\eta$ is therefore a composition or route-prominence index, not a measure of total market size.
+
+The information-producing node chooses costly effort $e\geq 0$. Effort generates a productive information input
+\begin{equation}
+    x=g(e), \qquad g'(e)>0,
+    \label{eq:learning}
+\end{equation}
+which improves the upstream product. Because the improved product is used through both routes, the information affects route-specific demand or value through functions $D_S(x)$ and $D_R(x)$, with
+\begin{equation}
+    D_S'(x)>0, \qquad D_R'(x)>0.
+    \label{eq:reuse}
+\end{equation}
+Quantities or activity-dependent returns take the separable form
+\begin{equation}
+    q_i=\omega_i(\eta)D_i(g(e)), \qquad i\in\{S,R\}.
+    \label{eq:quantities}
+\end{equation}
+The separability assumption isolates the mechanism of interest: downstream reallocation operates through the route-activity weights, while the technological productivity of information is captured by $D_i$ and $g$.
+
+\subsection{Timing and information}
+
+The core problem has the following timing. First, $\eta$ is realized and is common knowledge. Second, $S$ chooses information effort $e$. Third, the information input $x=g(e)$ is generated. Finally, the resulting product improvement is used through both routes and payoffs are realized. Effort is noncontractible. There is no signal-revelation game, bargaining stage, strategic wholesale-price choice, or foreclosure decision in the canonical model.
+
+This timing separates the economic source of the wedge from alternative vertical mechanisms. The information produced at $S$ is technologically valuable outside $S$, but the return to that cross-route use is not fully appropriated by the party choosing $e$.
+
+\subsection{Private and coordinated objectives}
+
+Let $m_S>0$ denote the private margin captured by $S$ on its own route, and let $C(e)$ denote the effort cost. The private objective is
+\begin{equation}
+    \pi_S(e,\eta)=m_S\omega_S(\eta)D_S(g(e))-C(e).
+    \label{eq:privateobjective}
+\end{equation}
+The key feature of \eqref{eq:privateobjective} is that the information producer internalizes only the return attached to its own shrinking footprint $\omega_S(\eta)$.
+
+For comparison, define a vertically coordinated objective that internalizes the system return to information across both downstream routes:
+\begin{equation}
+    J(e,\eta)
+    =A_S\omega_S(\eta)D_S(g(e))
+    +A_R\omega_R(\eta)D_R(g(e))
+    -C(e),
+    \label{eq:coordinatedobjective}
+\end{equation}
+where $A_S>0$ and $A_R>0$ are the system margins associated with the two routes. The coordinated benchmark is not yet social welfare: it internalizes route-level system returns but not necessarily consumer surplus. Section~\ref{sec:welfare} introduces a separate welfare benchmark and keeps these objects distinct.
+
+\subsection{Assumptions and economic content}
+
+The mechanism relies on five substantive ingredients. First, information production is costly. Second, effort is noncontractible and its returns are incompletely appropriable. Third, downstream reallocation shrinks the information producer's appropriable footprint, as in \eqref{eq:routeweights}. Fourth, the information can improve the upstream product used through the alternative route, as in \eqref{eq:reuse}. Fifth, the expanding route must have sufficiently high marginal system value for coordinated information demand to rise as activity shifts toward it. The last condition is stated precisely in Section~\ref{sec:mainresults}.
+
+We impose sufficient smoothness and concavity for the private and coordinated effort problems to have unique interior optima. These are regularity conditions rather than additional economic mechanisms. The linear learning, quadratic effort cost, and quasilinear demand used later are benchmark devices for closed-form welfare analysis; the main comparative-static result does not depend on those functional forms.
+
+The economic tension can now be stated without solving the model. As $\eta$ rises, the party that produces information has fewer own-route transactions over which to earn a return from that effort. At the same time, the system can make greater use of the same information through the expanding route. The next sections characterize when these two margins make private and coordinated information incentives move in opposite directions.
