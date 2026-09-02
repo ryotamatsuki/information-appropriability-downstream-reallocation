@@ -1,0 +1,45 @@
+name: Stage 9 Reproducibility
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout full history
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13.5'
+          cache: pip
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+      - name: Verify frozen theory implementation
+        run: make verify
+      - name: Regenerate deterministic outputs
+        run: make outputs
+      - name: Check generated outputs are current
+        run: git diff --exit-code -- outputs/
+
+  manuscript-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+      - name: Install minimal LaTeX tooling
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-base texlive-latex-recommended
+      - name: Compile manuscript scaffold
+        run: make manuscript
