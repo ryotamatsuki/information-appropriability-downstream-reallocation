@@ -33,13 +33,15 @@ Automatic caps were applied exactly as specified by the Stage 3-K prompt.
 
 Raw scores are informative only for deciding which failed architectures deserved deeper inspection. They do not override the hard gates.
 
-Initial TOP 3 by research promise before binding caps:
+The **broad pre-prior-art promise screen** initially highlighted K6, K8, and K3. K8 was then killed immediately after model-level inspection because Lukyanov–Vlasova (2026) is too close to its defining reputation → reliance/effort → test-informativeness → reputation topology.
+
+The **canonical TOP 3 entering the final comparative ranking** therefore became:
 
 1. K6 — Integration / Channel Organization × Information Production
-2. K8 — Reliability / Reputation Learning × Endogenous Reliance
-3. K3 — Upstream Action Changes Future Signal Technology
+2. K3 — Upstream Action Changes Future Signal Technology
+3. K2 — Posterior-Based Allocation × Strategic Reporting / Disclosure
 
-After model-level prior-art inspection, K8 was removed because Lukyanov–Vlasova (2026) is too close. K2 was examined as the communication alternative but also failed prior-art distance.
+K2 was retained only as the strongest communication alternative and was then killed by whole-game prior-art density.
 
 Deep-dive TOP 2:
 
